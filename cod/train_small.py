@@ -110,6 +110,11 @@ for epoch in range(num_epochs):
     model.train()
     train_loss, train_iou = 0, 0
 
+    if epoch == 20:
+        for param_group in optimizer.param_groups:
+            param_group['lr'] = 1e-4
+        print("Viteza de invatare a scazut la 1e-4 pentru rafinament.")
+
     for i, (imgs, masks) in enumerate(train_loader):
         imgs, masks = imgs.to(device), masks.to(device)
 

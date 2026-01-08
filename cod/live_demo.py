@@ -40,7 +40,7 @@ def postprocess_mask(mask, original_size=(1280, 720), threshold=0.2):
         mask_bin = (mask_np > threshold).astype(np.uint8)
         mask_up = cv2.resize(mask_bin, original_size, interpolation=cv2.INTER_NEAREST)
 
-        # mare
+        #mare
         # num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(mask_up)
         # if num_labels > 1:
         #     largest_label = 1 + np.argmax(stats[1:, cv2.CC_STAT_AREA])
